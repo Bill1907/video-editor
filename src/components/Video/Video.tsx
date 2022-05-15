@@ -16,11 +16,12 @@ const initialOptions: videojs.PlayerOptions = {
   }
 };
 
-const VideoPlayer: React.FC<VideoPlayerProps> = ({options}) => {
+const Video: React.FC<VideoPlayerProps> = ({options}) => {
   const videoNode = useRef<any>();
   const player = useRef<videojs.Player>();
 
   useEffect(() => {
+    console.log(videoNode.current);
     player.current = videojs(videoNode.current, {
       ...initialOptions,
       ...options,
@@ -32,7 +33,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({options}) => {
     };
   }, [options]);
 
-  return <video ref={videoNode} className="video-js" />;
+  return <video ref={videoNode} data-testid="player" className="video-js" />;
 };
 
-export default VideoPlayer
+export default Video

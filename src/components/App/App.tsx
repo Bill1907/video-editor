@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.scss';
-import VideoPlayer from '../Video/Video';
+import Video from '../Video/Video';
 
 const videoJsOptions = {
   sources: [
@@ -14,7 +14,7 @@ const videoJsOptions = {
 function App() {
   return (
     <div className="App">
-      <VideoPlayer options={videoJsOptions}/>
+      <Video options={videoJsOptions}/>
     </div>
   );
 }
